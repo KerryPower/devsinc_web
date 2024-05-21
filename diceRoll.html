@@ -1,0 +1,48 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSINC Dice Roller</title>
+    <link rel="stylesheet" href="./diceRollStyle.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img width=340px src="logo.png" alt="devsinc logo">
+        </div>
+        <div class="faces">
+            <label for="faceNumber">Enter number of die faces<br>99 Max<br><br></label>
+            <input id="faceNumber" name="faceNumber" type="number" placeholder="99 max" min="1" max="99" value="6">
+        </div>
+        <div class="numberOfDice">
+            <label for="diceNumber">Enter number of dice to roll<br>10 max<br><br></label>
+            <input id="diceNumber" type="number" placeholder="10 max" min="1" max="10" value="1" required>
+        </div>
+        <div class="rollButton">
+            <button id="rollButton" onclick="rollDice()">Roll Dice</button>
+        </div>
+        <div class="output-grid">
+            <div class="output" id="output1"></div>
+            <div class="output" id="output2"></div>
+            <div class="output" id="output3"></div>
+            <div class="output" id="output4"></div>
+            <div class="output" id="output5"></div>
+            <div class="output" id="output6"></div>
+            <div class="output" id="output7"></div>
+            <div class="output" id="output8"></div>
+            <div class="output" id="output9"></div>
+            <div class="output" id="output10"></div>
+        </div>
+    </div>
+
+    <script src="./diceRollScripts,js"></script>
+
+</body>
+
+</html>

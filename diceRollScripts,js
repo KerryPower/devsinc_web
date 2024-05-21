@@ -1,0 +1,35 @@
+//Scripts for diceRoll
+
+window.onload = function () {// Hides output boxes and enables/disables input boxes.
+            let outputs = document.querySelectorAll('.output');
+            outputs.forEach(function (output) {
+                output.style.display = 'none';
+            });
+            document.getElementById('faceNumber').addEventListener('input', validateInputs);
+            document.getElementById('diceNumber').addEventListener('input', validateInputs);
+        }
+        function validateInputs() {// disables rollbutton when input values are out of range.
+            let faceNumber = parseInt(document.getElementById('faceNumber').value);
+            let diceNumber = parseInt(document.getElementById('diceNumber').value);
+            let rollButton = document.querySelector('.rollButton button');
+            if (isNaN(faceNumber) || isNaN(diceNumber) || faceNumber < 1 || faceNumber > 99 || diceNumber < 1 || diceNumber > 10) {
+                rollButton.disabled = true;
+            } else {
+                rollButton.disabled = false;
+            }
+        }
+        function rollDice() {// uses diceRoll to calculate for required number of dice.
+            let faceNumber = document.getElementById('faceNumber').value;
+            let diceNumber = document.getElementById('diceNumber').value;
+            for (let i = 1; i <= 10; i++) {
+                if (i <= diceNumber) {
+                    document.getElementById('output' + i).innerHTML = diceRoll(faceNumber);
+                    document.getElementById('output' + i).style.display = 'block';
+                } else {
+                    document.getElementById('output' + i).style.display = 'none';
+                }
+            }
+        }
+        function diceRoll(abc) {// provides a random number from 1-value of input
+            return (Math.floor((Math.random() * abc) + 1));
+        }
